@@ -1,12 +1,32 @@
+# This script was created by Dexafree, and it was based on a previous one made by yukinoraru
+#
+# It requires ImageMagick installed in order to work
+#
+# The script is released under a Apache v2 license
+#
+# Copyright 2014 Dexafree
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
 FONT      = "Material-Design.ttf"
 FONT_SIZE = ARGV[0]
 FOLDER = ARGV[1]
 
-FIRST     = "\ue600"  
-LAST      = "\ue7e9" 
+FIRST     = "\ue600"  # The first character that contains information in the font
+LAST      = "\ue7e9"  # The last character that contains information in the font
 
-#//-------------------------------------------
-
+# Array containing, in order, all the icon names
 names = ['icon-material-access-alarms',
 'icon-material-accessibility',
 'icon-material-access-time',
@@ -499,13 +519,12 @@ names = ['icon-material-access-alarms',
 'icon-material-web22']
 
 
-
+# We will only execute the program if the arguments are correct
 if ARGV.length == 2
-    `mkdir #{FOLDER}`
+    `mkdir #{FOLDER}` # Create the output folder
     i = 0
     (FIRST..LAST).step do |a|
       cmd = "convert -background none -fill black -font #{FONT} -pointsize #{FONT_SIZE} label:\"#{a}\" ./#{FOLDER}/#{names[i]}.png"
-      #puts cmd
       system(cmd)
       i = i+1
     end
