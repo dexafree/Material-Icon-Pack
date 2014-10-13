@@ -16,6 +16,8 @@ ruby extract.rb 96x96 xxhdpi
 
 And then you would have all the icons contained in the font, exported to a new folder called `xxhdpi`.
 
+Also, if you wanted, just by editing a little bit the script, you could get the output icons in any desired color you wanted.
+
 The ruby script was based in a previous script I found, made by yukinoraru.
 
 Enjoy the icons!
